@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'log_reg/base.html'%}
+  {% block body_block %}
+
+  <h3>Login</h3>
+
+  {% if messages %}
+  <div class="alert alert-danger">
+    <ul>
+    {% for message in messages %}
+      <li style="list-style:none;">{{message}}</li>
+    {% endfor%}
+    </ul>
+  </div>
+  {% endif %}
+  <form action="login/submit" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label>Email address: </label>
+      <input type="text" class="form-control registration_page" name='log_email'>
+      <small id="emailHelp" class="form-text text-muted">Make sure you use a valid email</small>
+    </div>
+
+    <div class="form-group">
+      <label>Password: </label>
+      <input type="password" class="form-control registration_page" name="log_password">
+      <small id="passwordHelp" class="form-text text-muted">Password must be at least 8 characters and must contain at least 1 uppercase and 1 numeric value</small>
+    </div>
+
+
+    <button type="submit" class="btn btn-success registration_page">Login</button>
+
+  </form>
+
+  <a href="/register">Need an account? Register Today!</a>
+
+  {% endblock %}

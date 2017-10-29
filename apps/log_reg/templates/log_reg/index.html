@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "log_reg/base.html"%}
+  {% block body_block %}
+      <div class="jumbotron">
+        <h2 class="display-3">Travel Buddy</h2>
+        <p>Reusing "Login and Registration" code for this one!!!</p>
+        <p><a class="btn btn-primary btn-lg" href="/login" role="button">Login Now &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/register" role="button">Register Now &raquo;</a></p>
+
+      </div>
+
+        <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Travel Plans</h2>
+          <p>
+          Display the logged user's created/joined travel plans; also displays
+          other users' travel plans. Display should be specific per user.
+          Ability to add new travel plans. Validation applies. The newly added
+          travel plan should appear on logged user's Trip schedule table.
+        </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Join Other Users</h2>
+          <p>
+            Ability to join other users' travel plans. Once the logged user joins,
+            the travel plan record should move to the Trip Schedule tables
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Display Specific Travel Plan</h2>
+          <p>
+            Display of a particular travel plan which also indicates the list of users who joined that plan.
+          </p>
+        </div>
+      </div>
+
+      {% endblock %}

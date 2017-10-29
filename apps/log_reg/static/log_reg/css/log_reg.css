@@ -1,0 +1,21 @@
+/*================================================================================
+Registration Page CSS (registration.html)
+================================================================================*/
+
+input.form-control.registration_page{
+  width: 600px;
+}
+
+button.btn.btn-success.registration_page{
+  margin-left: 525px;
+
+}
+
+div.alert.alert-danger{
+  text-align: left;
+  width: 700px;
+}
+
+textarea.form-control{
+  width: 600px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'log_reg/base.html'%}
+  {% block body_block %}
+
+
+  <div class="row">
+      <h2>Trip Destination:  {{tripname}}</h2>
+      <p>Planned By: {{plannername}} {{plannerlastname}}</p>
+      <p>Description: {{description}}</p>
+      <p>Travel Date From: {{datefrom}}</p>
+      <p>Travel Date To: {{dateto}}</p>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <h2>Other users' joining the trip</h2>
+    
+   {% for party in travel.user_joining.all %}
+   {% if party.id != user_id %}
+     <p>{{party.first_name}} {{party.last_name}}</p>
+     {% endif %}
+   {%endfor%}
+  </div>
+
+
+  {% endblock %}

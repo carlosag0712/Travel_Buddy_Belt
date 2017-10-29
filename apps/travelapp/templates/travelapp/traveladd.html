@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'log_reg/base.html'%}
+  {% block body_block %}
+
+<h3 style="margin-bottom:50px;">Add a Trip</h3>
+
+  {% if messages %}
+    <div class="alert alert-danger" role="alert">
+      {% for message in messages %}
+      <ul>
+        <li style="list-style:none">{{message}}</li>
+      </ul>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+
+  <form action="/travels/post" method="POST">
+    {% csrf_token %}
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Destination</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="destination" style="width:405px;">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="description" style="width:405px;">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Travel Date From:</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" name="date_travel_from" value="{{date}}" style="width:405px;">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Travel Date To:</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" name="date_travel_to" style="width:405px;">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" style="margin-left:400px;width:200px;" class="btn btn-success">Add</button>
+    </div>
+  </div>
+</form>
+
+
+  {% endblock %}
